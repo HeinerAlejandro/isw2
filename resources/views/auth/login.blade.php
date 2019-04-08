@@ -1,72 +1,68 @@
-@extends('layouts.app')
+@extends('layouts.out-layout')
 
 @section('content')
+
 <div class="container">
-    <div class="row justify-content-center">
-        <div class="col-md-8">
+    <div class="row box-form valign-wrapper">
+        <div class="col s10 offset-s1 m8 offset-m2 l4 offset-l4">
             <div class="card">
-                <div class="card-header">{{ __('Login') }}</div>
+                <div class="card-title center-align">
+                    <div class="col s10 offset-s1 m8 offset-m2 l6 offset-l3">
+                        <img src="public/img/logo.png" alt="" class="responsive-img" style="margin-top: 15%;">
+                    </div>  
+                </div>
 
-                <div class="card-body">
-                    <form method="POST" action="{{ route('login') }}">
-                        @csrf
+                <div class="card-content">
+                    <div class="row login-container">
+                        <form method="POST" action="{{ route('login') }}">
+                            @csrf
 
-                        <div class="form-group row">
-                            <label for="email" class="col-md-4 col-form-label text-md-right">{{ __('E-Mail Address') }}</label>
+                            <div class="row">
+                                
+                                <div class="input-field col s12">
+                                    <input id="email" type="email" class="form-control{{ $errors->has('email') ? ' is-invalid' : '' }}" name="email" value="{{ old('email') }}" required autofocus>
+                                    
+                                    <label for="email">{{ __('USUARIO') }}</label>
 
-                            <div class="col-md-6">
-                                <input id="email" type="email" class="form-control{{ $errors->has('email') ? ' is-invalid' : '' }}" name="email" value="{{ old('email') }}" required autofocus>
-
-                                @if ($errors->has('email'))
-                                    <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $errors->first('email') }}</strong>
-                                    </span>
-                                @endif
-                            </div>
-                        </div>
-
-                        <div class="form-group row">
-                            <label for="password" class="col-md-4 col-form-label text-md-right">{{ __('Password') }}</label>
-
-                            <div class="col-md-6">
-                                <input id="password" type="password" class="form-control{{ $errors->has('password') ? ' is-invalid' : '' }}" name="password" required>
-
-                                @if ($errors->has('password'))
-                                    <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $errors->first('password') }}</strong>
-                                    </span>
-                                @endif
-                            </div>
-                        </div>
-
-                        <div class="form-group row">
-                            <div class="col-md-6 offset-md-4">
-                                <div class="form-check">
-                                    <input class="form-check-input" type="checkbox" name="remember" id="remember" {{ old('remember') ? 'checked' : '' }}>
-
-                                    <label class="form-check-label" for="remember">
-                                        {{ __('Remember Me') }}
-                                    </label>
+                                    @if ($errors->has('email'))
+                                        <span class="invalid-feedback" role="alert">
+                                            <strong>{{ $errors->first('email') }}</strong>
+                                        </span>
+                                    @endif
                                 </div>
                             </div>
-                        </div>
 
-                        <div class="form-group row mb-0">
-                            <div class="col-md-8 offset-md-4">
-                                <button type="submit" class="btn btn-primary">
-                                    {{ __('Login') }}
-                                </button>
+                            <div class="row">
+                                <div class="input-field col s12">
+                                    <input id="password" type="password" class="form-control{{ $errors->has('password') ? ' is-invalid' : '' }}" name="password" required>
+                                 <label for="password" >{{ __('CONTRASEÑA') }}</label>
 
-                                @if (Route::has('password.request'))
-                                    <a class="btn btn-link" href="{{ route('password.request') }}">
-                                        {{ __('Forgot Your Password?') }}
-                                    </a>
-                                @endif
+                                    @if ($errors->has('password'))
+                                        <span class="invalid-feedback" role="alert">
+                                            <strong>{{ $errors->first('password') }}</strong>
+                                        </span>
+                                    @endif
+                                </div>
                             </div>
-                        </div>
-                    </form>
+
+                            @if (Route::has('password.request'))
+                                <div class="row">
+                                    <div class="input-field col s12">
+                                        <a class="" href="{{ route('password.request') }}">
+                                            {{ __('¿Olvidó su contraseña?') }}
+                                        </a>
+                                    </div>
+                                </div>
+                            @endif  
+                                <div class="col-md-8 offset-md-4">
+                                    <button type="submit" class="btn btn-login btn-primary">
+                                        {{ __('Iniciar Sesión') }}
+                                    </button>
+                                </div>
+                        </form>
+                    </div>
                 </div>
-            </div>
+            </div>  
         </div>
     </div>
 </div>
