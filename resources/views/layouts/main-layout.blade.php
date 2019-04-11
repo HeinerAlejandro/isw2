@@ -22,7 +22,7 @@
                   <!-- Dropdown Trigger -->
                     <li>
                         <a class="dropdown-trigger dropdownmenu" href="#!" data-target="dropdownmenu">
-                          <i class="material-icons left">account_circle</i>{{ Auth::user()->name }} {{ Auth::user()->lastname }}<i class="material-icons right">arrow_drop_down</i>
+                          <i class="material-icons left">account_circle</i>{{ Auth::user()->usuario }} {{ Auth::user()->lastname }}<i class="material-icons right">arrow_drop_down</i>
                           </a>
                     </li>
 
