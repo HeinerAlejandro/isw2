@@ -20,13 +20,13 @@
                             <div class="row">
                                 
                                 <div class="input-field col s12">
-                                    <input id="email" type="email" class="form-control{{ $errors->has('email') ? ' is-invalid' : '' }}" name="email" value="{{ old('email') }}" required autofocus>
+                                    <input id="login" type="text" autocomplete="off" class="form-control{{ $errors->has('login') ? ' is-invalid' : '' }}" name="login" value="{{ old('login') }}" required autofocus>
                                     
-                                    <label for="email">{{ __('USUARIO') }}</label>
+                                    <label for="login">{{ __('USUARIO') }}</label>
 
-                                    @if ($errors->has('email'))
+                                    @if ($errors->has('login'))
                                         <span class="invalid-feedback" role="alert">
-                                            <strong>{{ $errors->first('email') }}</strong>
+                                            <strong>{{ $errors->first('login') }}</strong>
                                         </span>
                                     @endif
                                 </div>
