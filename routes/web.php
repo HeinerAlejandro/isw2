@@ -30,9 +30,9 @@ Route::get('/logout',function(){
 })->name('logout-guest');
 
 // Deniega el acceso al registro de usuarios
-Route::get('/register',function(){
-   return redirect('/');
-})->name('register')->middleware('guest');
+// Route::get('/register',function(){
+//    return redirect('/');
+// })->name('register')->middleware('guest');
 
 // Ruta principal al dashboard
 Route::get('/home', 'HomeController@index')->name('home');

@@ -4,13 +4,13 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
-class persona extends Model
+class Persona extends Model
 {
 
 	protected $table = "personas";
 
     protected $fillable = [
-        'user_id', 
+        'cod_usuario', 
         'nombres', 
         'apellidos', 
         'cedula',
@@ -21,8 +21,8 @@ class persona extends Model
         'tipo'
     ];
 
-    public function users() {
-    	return $this->hasOne(User::Class);
+    public function usuario() {
+    	return $this->belongsTo(User::Class,'cod_usuario');
     }
 
     // $usuario = new User();

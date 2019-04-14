@@ -15,8 +15,8 @@ class CreatePersonasTable extends Migration
     {
         Schema::create('personas', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->integer('usuario')->unsigned();
-            $table->foreign('usuario')->references('id')->on('users');
+            $table->integer('cod_usuario')->unsigned()->nullable()->unique();
+            $table->foreign('cod_usuario')->references('id')->on('users')->onDelete('set null');
             $table->string('nombres');
             $table->string('apellidos');
             $table->string('cedula')->unique();
@@ -25,6 +25,7 @@ class CreatePersonasTable extends Migration
             $table->date('fecha_ingreso');
             $table->enum('sexo', ['masculino', 'femenino']);
             $table->enum('tipo', ['estudiante', 'profesor']);
+            $table->timestamps();
         });
     }
 
