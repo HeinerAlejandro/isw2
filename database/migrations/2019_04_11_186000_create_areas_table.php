@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateDepartamentosTable extends Migration
+class CreateAreasTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,11 +13,11 @@ class CreateDepartamentosTable extends Migration
      */
     public function up()
     {
-        Schema::create('departamentos', function (Blueprint $table) {
+        Schema::create('areas', function (Blueprint $table) {
             $table->bigIncrements('id');
+            $table->integer('cod_departamento')->unsigned();
             $table->string('nombre');
-            $table->integer('cod_jefe')->unsigned()->nullable()->unique();
-            $table->foreign('cod_jefe')->references('id')->on('profesors')->onDelete('set null');
+            $table->integer('cod_coordinador')->unsigned()->nullable()->unique();
             $table->timestamps();
         });
     }
@@ -29,6 +29,6 @@ class CreateDepartamentosTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('departamentos');
+        Schema::dropIfExists('areas');
     }
 }
