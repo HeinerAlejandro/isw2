@@ -22,7 +22,7 @@
                   <!-- Dropdown Trigger -->
                     <li>
                         <a class="dropdown-trigger dropdownmenu" href="#!" data-target="dropdownmenu">
-                          <i class="material-icons left">account_circle</i>{{ Auth::user()->persona->nombres }} {{ Auth::user()->persona->apellidos }}<i class="material-icons right">arrow_drop_down</i>
+                          <i class="material-icons left">account_circle</i>{{ Auth::user()->usuario }}<i class="material-icons right">arrow_drop_down</i>
                           </a>
                     </li>
 
@@ -34,7 +34,7 @@
     <!-- items menu mobile -->
     <ul class="sidenav" id="mobile-demo">
       <li><a href="#!">
-        <i class="material-icons left">account_circle</i>{{ Auth::user()->name }} {{ Auth::user()->lastname }}</a>
+        <i class="material-icons left">account_circle</i>{{ Auth::user()->usuario }} {{ Auth::user()->lastname }}</a>
       </li>
       <li class="divider"></li>
         <ul class="collapsible">

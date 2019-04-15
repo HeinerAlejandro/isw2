@@ -42,3 +42,16 @@ Route::get('/home', 'HomeController@index')->name('home');
 // 	return "Pagina de Error";
 // });
 
+
+Route::group(['namespace' => 'Admin'], function() {
+    // Rutas de los controladores dentro del Namespace "App\Http\Controllers\Admin"
+    Route::get('admin/posts', 'PostController@index');
+    Route::get('admin/posts/create', 'PostController@create');
+    Route::post('admin/posts', 'PostController@store');
+});
+
+Route::group(['prefix' => 'admin', 'namespace' => 'admin', 'middleware' => ['auth']], function () {
+    Route::resource('usuario', 'UsuarioController');
+    Route::resource('estudiante', 'EstudianteController');
+    Route::resource('profesor', 'ProfesorController');
+});
