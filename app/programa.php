@@ -8,12 +8,16 @@ class Programa extends Model
 {
 	protected $fillable = [
     	'nombre'
-        'profesor_id',
+        'cod_coordinador',
     ];
 
     public function coordinador()
 	{
-	   return $this->belongsTo(Profesor::class);
+	   return $this->belongsTo(Profesor::class,'cod_coordinador');
 	}
 
+    public function carreras()
+    {
+       return $this->hasMany(Carrera::class,'cod_programa');
+    }
 }

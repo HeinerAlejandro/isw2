@@ -24,7 +24,7 @@ class CreatePersonasTable extends Migration
             $table->date('fecha_nacimiento');
             $table->date('fecha_ingreso');
             $table->enum('sexo', ['masculino', 'femenino']);
-            $table->enum('tipo', ['estudiante', 'profesor']);
+            $table->enum('tipo', ['estudiante', 'profesor','completo']);
             $table->timestamps();
         });
     }

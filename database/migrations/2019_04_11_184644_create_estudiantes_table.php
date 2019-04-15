@@ -15,6 +15,10 @@ class CreateEstudiantesTable extends Migration
     {
         Schema::create('estudiantes', function (Blueprint $table) {
             $table->bigIncrements('id');
+            $table->integer('cod_persona')->unsigned()->unique();
+            $table->foreign('cod_persona')->references('id')->on('personas')->onDelete('set null');
+            $table->float('saldo');
+            $table->enum('estado', ['activo', 'inactivo','en regimen','inscrito','no inscrito','egresado']);
             $table->timestamps();
         });
     }
