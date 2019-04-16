@@ -8,19 +8,21 @@ class LapsoAcademico extends Model
 {
     protected $fillable = [ 
         'descripcion', 
+        'cod_programa', 
         'fecha_inicio', 
         'fecha_fin',
         'costo',
         'estado'
     ];
 
-    public function regimenes()
+    public function programa()
     {
-       return $this->hasMany(ExpedienteRegimen::class,'cod_expediente');
+       return $this->belongsTo(Programa::class,'cod_programa');
     }
 
-	public function FechaInscripciones()
+    public function MateriasOfertadas()
     {
-       return $this->hasMany(FechaInscripcion::class,'cod_lapso');
+       return $this->hasMany(MateriaOfertada::class,'cod_lapso');
     }
+    
 }

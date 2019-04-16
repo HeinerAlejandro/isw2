@@ -20,4 +20,9 @@ class Programa extends Model
     {
        return $this->hasMany(Carrera::class,'cod_programa');
     }
+
+    public function lapsos()
+    {
+       return $this->hasMany(LapsoAcademico::class,'cod_programa');
+    }
 }

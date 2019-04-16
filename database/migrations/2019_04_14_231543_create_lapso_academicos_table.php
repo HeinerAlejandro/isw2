@@ -16,6 +16,8 @@ class CreateLapsoAcademicosTable extends Migration
         Schema::create('lapso_academicos', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->string('descripcion');
+            $table->integer('cod_programa')->unsigned()->nullable()->unique();
+            $table->foreign('cod_programa')->references('id')->on('programas')->onDelete('set null');
             $table->date('fecha_inicio');
             $table->date('fecha_fin');  
             $table->float('costo')->nullable();
