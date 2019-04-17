@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 class Programa extends Model
 {
 	protected $fillable = [
-    	'nombre'
+    	'nombre',
         'cod_coordinador',
     ];
 

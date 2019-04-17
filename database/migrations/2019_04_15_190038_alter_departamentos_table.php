@@ -25,6 +25,8 @@ class AlterDepartamentosTable extends Migration
      */
     public function down()
     {
-        //
+        Schema::table('departamentos', function($table) {
+            $table->dropForeign(['cod_jefe']);
+        });
     }
 }

@@ -26,6 +26,9 @@ class AlterProfesorsTable extends Migration
      */
     public function down()
     {
-        //
+        Schema::table('profesors', function($table) {
+            $table->dropForeign(['cod_persona']);
+            $table->dropForeign(['cod_area']);
+        });
     }
 }

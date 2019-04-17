@@ -16,7 +16,7 @@ class CreateProgramasTable extends Migration
         Schema::create('programas', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->string('nombre');
-            $table->integer('coordinador')->unsigned();
+            $table->integer('coordinador')->unsigned()->nullable();
             $table->foreign('coordinador')->references('id')->on('profesors');
             $table->timestamps();
         });

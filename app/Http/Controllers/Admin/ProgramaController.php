@@ -4,8 +4,9 @@ namespace App\Http\Controllers\Admin;
 
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use App\Programa;
 
-class ProfesorController extends Controller
+class ProgramaController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -14,7 +15,8 @@ class ProfesorController extends Controller
      */
     public function index()
     {
-        //
+        $programas = Programa::all();
+        return view('admin.programa.index',compact('programas'));
     }
 
     /**
@@ -24,7 +26,7 @@ class ProfesorController extends Controller
      */
     public function create()
     {
-        //
+        return view('admin.programa.create');
     }
 
     /**
@@ -35,7 +37,18 @@ class ProfesorController extends Controller
      */
     public function store(Request $request)
     {
-        //
+
+        $mensajes = [
+            // 'usuario.unique' => 'El nombre es requerido',
+        ];
+        $validatedData = $request->validate([
+            'nombre' => 'required|unique:programas|min:2',
+        ]);
+        $programa = new Programa();
+        $programa->nombre =$request->nombre;
+        $programa->save();
+
+        return view('admin.programa.store',compact('programa'));
     }
 
     /**
@@ -46,7 +59,7 @@ class ProfesorController extends Controller
      */
     public function show($id)
     {
-        //
+        return view('admin.programa.show');
     }
 
     /**
@@ -57,7 +70,7 @@ class ProfesorController extends Controller
      */
     public function edit($id)
     {
-        //
+        return view('admin.programa.edit');
     }
 
     /**
@@ -69,7 +82,7 @@ class ProfesorController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        return view('admin.programa.update');
     }
 
     /**
@@ -80,6 +93,6 @@ class ProfesorController extends Controller
      */
     public function destroy($id)
     {
-        //
+        return view('admin.programa.delete');
     }
 }
