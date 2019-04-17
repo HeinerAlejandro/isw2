@@ -2,7 +2,7 @@
 
 use Illuminate\Database\Seeder;
 
-class UsuarioLokcyam extends Seeder
+class UsuariosSeeder extends Seeder
 {
     /**
      * Run the database seeds.
