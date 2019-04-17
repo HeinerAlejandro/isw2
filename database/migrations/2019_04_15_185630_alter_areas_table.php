@@ -26,6 +26,9 @@ class AlterAreasTable extends Migration
      */
     public function down()
     {
-        //
+         Schema::table('areas', function($table) {
+            $table->dropForeign(['cod_coordinador']);
+            $table->dropForeign(['cod_departamento']);
+        });
     }
 }
