@@ -42,6 +42,7 @@ class ProgramaController extends Controller
 
         $mensajes = [
             'nombre.unique' => 'El nombre es requerido',
+
         ];
         $validatedData = $request->validate([
             'nombre' => 'required|unique:programas|min:2',
