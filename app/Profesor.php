@@ -8,7 +8,8 @@ class Profesor extends Model
 {
     protected $fillable = [
     	'cod_persona',
-        'cod_area', 
+        'cod_area',
+        'cod_sede',
         'cargo',
         'estado',
     ];
@@ -16,6 +17,11 @@ class Profesor extends Model
     public function persona()
     {
        return $this->belongsTo(Persona::class,'cod_persona');
+    }
+
+    public function sede()
+    {
+       return $this->belongsTo(Sede::class,'cod_sede');
     }
 
     public function area()

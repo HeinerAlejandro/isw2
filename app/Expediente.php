@@ -8,7 +8,8 @@ class Expediente extends Model
 {
     protected $fillable = [
         'cod_estudiante', 
-        'cod_plan', 
+        'cod_plan',
+        'cod_sede',
         'uc_permitidas', 
         'nivel_estudio', 
         'semestres_cursados',
@@ -26,6 +27,11 @@ class Expediente extends Model
     public function plan()
     {
        return $this->belongsTo(PlanEstudio::class,'cod_plan');
+    }
+
+    public function sede()
+    {
+       return $this->belongsTo(Sede::class,'cod_sede');
     }
 
     public function regimenes()

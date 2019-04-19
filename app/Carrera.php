@@ -32,4 +32,9 @@ class Carrera extends Model
     {
        return $this->hasMany(PlanEstudio::class,'cod_carrera');
     }
+
+    public function sedes()
+    {
+       return $this->hasMany(SedeCarrera::class,'cod_carrera');
+    }
 }

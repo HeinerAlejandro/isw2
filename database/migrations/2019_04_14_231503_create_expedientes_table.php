@@ -15,13 +15,12 @@ class CreateExpedientesTable extends Migration
     {
         Schema::create('expedientes', function (Blueprint $table) {
             $table->bigIncrements('id');
-
             $table->string('descripcion');
             $table->integer('cod_carrera')->unsigned();
-            $table->foreign('cod_carrera')->references('id')->on('carreras')->onDelete('set null');   
-            $table->date('fecha');
-
-            
+            $table->foreign('cod_carrera')->references('id')->on('carreras')->onDelete('set null');
+            $table->integer('cod_sede')->unsigned();
+            $table->foreign('cod_sede')->references('id')->on('sedes')->onDelete('set null');    
+            $table->date('fecha');            
             $table->timestamps();
         });
     }
