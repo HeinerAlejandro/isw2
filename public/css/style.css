@@ -1,0 +1,163 @@
+:root {
+    --full-vh: 100vh;
+    --full-vw: 100vw;
+    --full-pe: 100%;
+    --primary-color: #ff9a00;
+    --secondary-color: #1997fe;
+    --border-color: #cfcfcf;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+*,
+*::after,
+*::before {
+    box-sizing: border-box;
+}
+
+html,
+body {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    font-family: 'Century Gothic', 'CenturyGothic', 'AppleGothic', sans-serif;
+}
+
+#login-form {
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#login-container {
+    max-width: 28rem;
+    padding: 40px;
+    border-radius: 4px;
+    background-color: #ffffff;
+    letter-spacing: 0.01rem;
+    text-transform: uppercase;
+}
+
+#login-container .input-field {
+    margin-top: 0;
+    margin-bottom: 2rem;
+}
+
+#login-container .logo-lugu {
+    width: 200px;
+    height: 200px;
+}
+
+/* Lugu Static CSS */
+
+.btn {
+    height: 50px;
+    background-color: transparent;
+    border: 1px solid var(--primary-color);
+    border-radius: 5px;
+    box-shadow: none;
+    line-height: 50px;
+    color: var(--primary-color);
+}
+
+.btn:hover {
+    background-color: var(--primary-color);
+    box-shadow: none;
+    color: #fff;
+    transition: all 0.6s;
+}
+
+.input-field label {
+    color: var(--primary-color);
+}
+
+.input-field label.code-input-readonly {
+    color: var(--secondary-color);
+}
+
+input:not([type]):read-only {
+    text-align: center;
+    border-bottom: 1px solid var(--secondary-color);
+}
+
+.input-field.col label.code-input-readonly {
+    width: 100%;
+    transform: translateX(7%) translateY(100%);
+}
+
+.input-field label.code-input {
+    color: var(--border-color);
+}
+
+input:not([type]):focus:not([readonly]),
+input[type=text]:not(.browser-default):focus:not([readonly]),
+input[type=password]:not(.browser-default):focus:not([readonly]),
+input[type=email]:not(.browser-default):focus:not([readonly]),
+input[type=url]:not(.browser-default):focus:not([readonly]),
+input[type=time]:not(.browser-default):focus:not([readonly]),
+input[type=date]:not(.browser-default):focus:not([readonly]),
+input[type=datetime]:not(.browser-default):focus:not([readonly]),
+input[type=datetime-local]:not(.browser-default):focus:not([readonly]),
+input[type=tel]:not(.browser-default):focus:not([readonly]),
+input[type=number]:not(.browser-default):focus:not([readonly]),
+input[type=search]:not(.browser-default):focus:not([readonly]),
+textarea.materialize-textarea:focus:not([readonly]) {
+    border-bottom: 1px solid var(--primary-color);
+    -webkit-box-shadow: 0 1px 0 0 var(--primary-color);
+    box-shadow: 0 1px 0 0 var(--primary-color);
+}
+
+input:not([type]):focus:not([readonly])+label,
+input[type=text]:not(.browser-default):focus:not([readonly])+label,
+input[type=password]:not(.browser-default):focus:not([readonly])+label,
+input[type=email]:not(.browser-default):focus:not([readonly])+label,
+input[type=url]:not(.browser-default):focus:not([readonly])+label,
+input[type=time]:not(.browser-default):focus:not([readonly])+label,
+input[type=date]:not(.browser-default):focus:not([readonly])+label,
+input[type=datetime]:not(.browser-default):focus:not([readonly])+label,
+input[type=datetime-local]:not(.browser-default):focus:not([readonly])+label,
+input[type=tel]:not(.browser-default):focus:not([readonly])+label,
+input[type=number]:not(.browser-default):focus:not([readonly])+label,
+input[type=search]:not(.browser-default):focus:not([readonly])+label,
+textarea.materialize-textarea:focus:not([readonly])+label {
+    color: var(--primary-color);
+}
+
+input:not([type]),
+input[type=text]:not(.browser-default),
+input[type=password]:not(.browser-default),
+input[type=email]:not(.browser-default),
+input[type=url]:not(.browser-default),
+input[type=time]:not(.browser-default),
+input[type=date]:not(.browser-default),
+input[type=datetime]:not(.browser-default),
+input[type=datetime-local]:not(.browser-default),
+input[type=tel]:not(.browser-default),
+input[type=number]:not(.browser-default),
+input[type=search]:not(.browser-default),
+textarea.materialize-textarea {
+    border-bottom: 1px solid var(--primary-color);
+}
+
+/* Media queries */
+
+@media (min-width: 320px) and (max-width: 360px) {
+    #login-container {
+        padding: 15px;
+        margin: 15px;
+    }
+}
+
+/* Atomic CSS */
+
+.primary-bg-color {
+    background-color: var(--primary-color);
+}
+
+.secondary-text-color {
+    color: var(--secondary-color);
+}
