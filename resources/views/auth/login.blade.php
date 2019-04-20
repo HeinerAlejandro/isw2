@@ -60,35 +60,39 @@
             </div>
         </div>
     </div>
-</div> 
+</div>
 --}}
 
-<main id="login-form">
-    <form method="POST" action="{{ route('login') }}" id="login-container" class="z-depth-1" autocomplete="off">
-        @csrf
-        <div class="row">
-            <div class="col s12 m12 l12">
-                <div class="center-align">
-                    <img src="{{ asset('public/img/logo-lugu-svg.svg') }}" class="logo-lugu" alt="Logo de LUGU" />
+<section id="login-form">
+    <div class="row">
+        <div class="col s12">
+            <form method="POST" action="{{ route('login') }}" id="login-container" class="z-depth-1" autocomplete="off">
+                @csrf
+                <div class="row">
+                    <div class="col s12 m12 l12">
+                        <div class="center-align">
+                            <img src="{{ asset('public/img/logo-lugu-svg.svg') }}" class="logo-lugu" alt="Logo de LUGU" />
+                        </div>
+                        <div class="input-field col s12 m12 l12">
+                            <input id="login" name="login" type="text" value="{{ old('login') }}" required autofocus />
+                            <label for="user">Usuario</label>
+                        </div>
+                        <div class="input-field col s12 m12 l12">
+                            <input id="password" name="password" type="password" required />
+                            <label for="password">Contraseña</label>
+                        </div>
+                        <div class="input-field col s12 m12 l12">
+                            <button type="submit" class="btn col s12">Iniciar sesión</button>
+                        </div>
+                        @if (Route::has('password.request'))
+                        <div class="col s12 m12 l12 center-align">
+                            <a href="{{ route('password.request') }}" class="secondary-text-color">¿Olvidaste tu contraseña?</a>
+                        </div>
+                        @endif
+                    </div>
                 </div>
-                <div class="input-field col s12 m12 l12">
-                    <input id="login" name="login" type="text" value="{{ old('login') }}" required autofocus />
-                    <label for="user">Usuario</label>
-                </div>
-                <div class="input-field col s12 m12 l12">
-                    <input id="password" name="password" type="password" required />
-                    <label for="password">Contraseña</label>
-                </div>
-                <div class="input-field col s12 m12 l12">
-                    <button class="btn col s12">Iniciar sesión</button>
-                </div>
-                @if (Route::has('password.request'))
-                <div class="col s12 m12 l12 center-align">
-                    <a href="{{ route('password.request') }} class=" secondary-text-color ">¿Olvidaste tu contraseña?</a>
-                </div>
-                @endif
-            </div>
+            </form>
         </div>
-    </form>
-</main>
+    </div>
+</section>
 @endsection

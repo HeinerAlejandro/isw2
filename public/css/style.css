@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css?family=Quicksand');
+
 :root {
     --full-vh: 100vh;
     --full-vw: 100vw;
@@ -23,7 +25,8 @@ body {
     height: 100vh;
     display: flex;
     flex-direction: column;
-    font-family: 'Century Gothic', 'CenturyGothic', 'AppleGothic', sans-serif;
+    font-family: 'Quicksand', sans-serif;
+    /* font-family: 'Century Gothic', 'CenturyGothic', 'AppleGothic', sans-serif; */
 }
 
 #login-form {
@@ -52,6 +55,154 @@ body {
     height: 200px;
 }
 
+/* //////////////////////////////////////////////////////////////////// */
+
+/* Navbar, Sidenav & Content -> Header & Main */
+
+header,
+main,
+footer {
+    padding-left: 300px;
+}
+
+main {
+    padding-top: 1rem;
+}
+
+@media only screen and (max-width: 992px) {
+
+    header,
+    main,
+    footer {
+        padding-left: 0;
+    }
+}
+
+nav,
+.navbar-fixed {
+    height: 110px;
+    color: #000;
+}
+
+nav {
+    -webkit-box-shadow: none;
+    box-shadow: none;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.14);
+    background-color: transparent;
+}
+
+nav .nav-wrapper .sidenav-trigger {
+    color: var(--primary-color);
+}
+
+nav .nav-wrapper .col>.breadcrumb,
+nav .nav-wrapper .col>.breadcrumb::after,
+nav .nav-wrapper .col>.breadcrumb::before {
+    font-size: 1.2rem;
+    color: var(--secondary-color);
+}
+
+nav .sidenav-trigger {
+    top: 20px;
+    margin: 0 36px 0 12px;
+}
+
+a.sidenav-trigger.top-nav {
+    position: absolute;
+    text-align: center;
+    height: 48px;
+    width: 48px;
+    top: 28px;
+    float: none;
+    margin-left: 1.5rem;
+    color: var(--secondary-color);
+    font-size: 36px;
+    z-index: 2;
+}
+
+/* Revisar */
+img.header-img {
+    width: 17%;
+    height: 100%;
+    display: flex;
+    margin: 10px auto 0 auto;
+}
+
+nav .header-breadcrumb {
+    padding: 14px 0 0 0;
+}
+
+ul.sidenav.sidenav-fixed {
+    overflow: hidden;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+    border-right: 1px solid rgba(0, 0, 0, 0.14);
+}
+
+.sidenav .user-view {
+    padding: 20px 40px 0 40px;
+    margin-bottom: 0;
+}
+
+.sidenav .user-view .background {
+    top: 20px;
+}
+
+.sidenav .user-info {
+    margin: 150px 0 0 0;
+}
+
+.sidenav .user-info a > span.name,
+.sidenav .user-info a > span.email {
+    font-size: 1.1rem;
+    font-weight: bold;
+}
+
+.sidenav li>a {
+    color: rgba(0, 0, 0, 0.87);
+    display: block;
+    font-size: 14.5px;
+    font-weight: 500;
+    height: 48px;
+    line-height: 48px;
+    padding: 0 16px;
+}
+
+.sidenav li>a>i,
+.sidenav li>a>[class^="mdi-"],
+.sidenav li>a li>a>[class*="mdi-"],
+.sidenav li>a>i.material-icons {
+    float: left;
+    height: 48px;
+    line-height: 48px;
+    margin: 0 1rem 0 0;
+    width: 29px;
+    font-size: 1.6rem;
+    color: #000;
+}
+
+/* //////////////////////////////////////////////////////////////////// */
+
+/* Reset password */
+
+#reset-password-email {
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* //////////////////////////////////////////////////////////////////// */
+
+/* Programas */
+
+#create-programa {
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
 /* Lugu Static CSS */
 
 .btn {
@@ -69,6 +220,10 @@ body {
     box-shadow: none;
     color: #fff;
     transition: all 0.6s;
+}
+
+.btn:focus {
+    background-color: var(--primary-color);
 }
 
 .input-field label {
@@ -143,6 +298,48 @@ textarea.materialize-textarea {
     border-bottom: 1px solid var(--primary-color);
 }
 
+/* Atomic CSS */
+
+.primary-text-color {
+    color: var(--primary-color);
+}
+
+.primary-bg-color {
+    background-color: var(--primary-color);
+}
+
+.secondary-text-color {
+    color: var(--secondary-color);
+}
+
+.text-uppercase {
+    text-transform: uppercase;
+}
+
+.divider {
+    margin: 8px 0;
+}
+
+.sidenav .divider {
+    margin: 0;
+}
+
+.mt-0 {
+    margin-top: 0;
+}
+
+.mb-0 {
+    margin-bottom: 0;
+}
+
+.mt-1 {
+    margin-top: 1rem;
+}
+
+.mb-1 {
+    margin-bottom: 1rem;
+}
+
 /* Media queries */
 
 @media (min-width: 320px) and (max-width: 360px) {
@@ -152,12 +349,14 @@ textarea.materialize-textarea {
     }
 }
 
-/* Atomic CSS */
-
-.primary-bg-color {
-    background-color: var(--primary-color);
+@media only screen and (max-width: 600px) {
+    a.sidenav-trigger.top-nav {
+        left: 0;
+    }
 }
 
-.secondary-text-color {
-    color: var(--secondary-color);
+@media only screen and (max-width: 992px) {
+    nav .nav-wrapper {
+        text-align: center;
+    }
 }

@@ -18,7 +18,7 @@
     <!-- CSS: Google Icon Font, Materialize, Style -->
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons" />
     <link rel="stylesheet" href="{{ asset('public/css/materialize.min.css') }}" />
-    <link rel="stylesheet" href="{{ asset('public/css/style.css?v=18042019') }}" />
+    <link rel="stylesheet" href="{{ asset('public/css/style.css?v=19042019') }}" />
 </head>
 
 <body>
