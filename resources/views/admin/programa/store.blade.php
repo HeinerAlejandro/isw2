@@ -2,7 +2,9 @@
 @section('title') Programa agregado
 @endsection
  
-@section('content') {{--
+@section('content') 
+
+{{--
 <div class="container">
 	<p>Programa agregado</p>
 	{{$programa}}
@@ -28,6 +30,9 @@
 				</tr>
 			</tbody>
 		</table>
+	</div>
+	<div class="col s12 mt-1 mb-1 center-align">
+		<a href="{{ route('programa.index') }}" class="btn">Ir a programas</a>
 	</div>
 </div>
 @endsection

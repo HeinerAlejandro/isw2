@@ -10,7 +10,9 @@
         <li class="divider"></li>
         <li><a href="{{ route('logout') }}">Cerrar sesion</a></li>
     </ul>
-    --}} {{--
+    --}} 
+    
+    {{--
     <div class="navbar-fixed">
         <nav class="z-depth-0">
             <div class="nav-wrapper">
@@ -41,8 +43,7 @@
                         <h5 class="header-breadcrumb mt-0 mb-0 text-uppercase show-on-medium-and-up hide-on-med-and-down">@yield('title')</h5>
                         <img src="{{ asset('public/img/logo-lugu-svg.svg') }}" alt="logo" class="header-img hide-on-med-and-up" />
                         <a href="#!" class="breadcrumb">First</a>
-                        <a href="/" class="breadcrumb">@yield('title')</a>
-                        {{-- <a href="#!" class="breadcrumb">Third</a> --}}
+                        <a href="/" class="breadcrumb">@yield('title')</a> {{-- <a href="#!" class="breadcrumb">Third</a>                        --}}
                     </div>
                 </div>
             </div>
@@ -111,16 +112,18 @@
                 <div class="collapsible-body"><span>Lorem ipsum dolor sit amet.</span></div>
             </li>
             <li>
-                <div class="collapsible-header"><i class="material-icons">business_center</i>Empresas</div>
-                <div class="collapsible-body"></div>
-            </li>
-            <li>
-                <div class="collapsible-header"><i class="material-icons">content_paste</i>Tareas</div>
-                <div class="collapsible-body"><span>Lorem ipsum dolor sit amet.</span></div>
-            </li>
-            <li>
-                <div class="collapsible-header"><i class="material-icons">account_box</i>Usuarios</div>
-                <div class="collapsible-body"><span>Lorem ipsum dolor sit amet.</span></div>
+                <div class="collapsible-header">
+                    <i class="material-icons">account_box</i>
+                        Usuarios
+                    <i class="material-icons ml-auto arrow-icon">keyboard_arrow_down</i>
+                </div>
+                <div class="collapsible-body">
+                    <ul>
+                        <li>
+                            <a href="{{ route('programa.index') }}">Programas</a>
+                        </li>
+                    </ul>
+                </div>
             </li>
         </ul>
         <li class="divider"></li>
@@ -132,7 +135,7 @@
 @endsection
  
 @section('main_content')
-    <main>
-        @yield('content')
-    </main>
+<main>
+    @yield('content')
+</main>
 @endsection

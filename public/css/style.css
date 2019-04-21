@@ -181,6 +181,10 @@ ul.sidenav.sidenav-fixed {
     color: #000;
 }
 
+.collapsible-header i.arrow-icon {
+    margin-right: 0;
+}
+
 /* //////////////////////////////////////////////////////////////////// */
 
 /* Reset password */
@@ -223,7 +227,13 @@ ul.sidenav.sidenav-fixed {
 }
 
 .btn:focus {
-    background-color: var(--primary-color);
+    background-color: #f79400;
+    color: #fff;
+}
+
+.btn:active {
+    background-color: #f09000;
+    color: #fff;
 }
 
 .input-field label {
@@ -324,12 +334,28 @@ textarea.materialize-textarea {
     margin: 0;
 }
 
+.ml-auto {
+    margin-left: auto;
+}
+
+.mr-auto {
+    margin-right: auto;
+}
+
 .mt-0 {
     margin-top: 0;
 }
 
+.mr-0 {
+    margin-right: 0;
+}
+
 .mb-0 {
     margin-bottom: 0;
+}
+
+.ml-0 {
+    margin-left: 0;
 }
 
 .mt-1 {

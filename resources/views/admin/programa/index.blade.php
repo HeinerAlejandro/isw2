@@ -15,6 +15,9 @@
 <section id="list-programa">
 	<div class="row container">
 		<div class="col s12">
+			<a href="{{ route('programa.create') }}" class="btn mt-1 mb-1">Agregar nuevo programa</a>
+		</div>
+		<div class="col s12">
 			<table>
 				<thead>
 					<tr>
@@ -28,13 +31,13 @@
 	
 				<tbody>
 					@foreach ($programas as $programa)
-					<tr>
-						<td>{{ $programa->nombre }}</td>
-						<td>{{ $programa->coordinador }}</td>
-						<td>{{ $programa->created_at }}</td>
-						<td>{{ $programa->updated_at }}</td>
-						<td></td>
-					</tr>
+						<tr>
+							<td>{{ $programa->nombre }}</td>
+							<td>{{ $programa->coordinador }}</td>
+							<td>{{ $programa->created_at }}</td>
+							<td>{{ $programa->updated_at }}</td>
+							<td></td>
+						</tr>
 					@endforeach
 				</tbody>
 			</table>

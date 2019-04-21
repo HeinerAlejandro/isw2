@@ -1,4 +1,6 @@
-@extends('layouts.out-layout') 
+@extends('layouts.out-layout')
+@section('title') Iniciar sesión
+@endsection
 @section('content') 
 {{--
 <div class="container">
