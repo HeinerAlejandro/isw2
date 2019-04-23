@@ -43,7 +43,7 @@ Route::get('/home', 'HomeController@index')->name('home');
 // });
 
 
-Route::group(['prefix' => 'admin', 'namespace' => 'admin', 'middleware' => ['auth']], function () {
+Route::group(['prefix' => 'admin', 'namespace' => 'Admin', 'middleware' => ['auth']], function () {
     Route::resource('usuario', 'UsuarioController');
     Route::resource('estudiante', 'EstudianteController')->only(['index', 'show','update']);
     Route::resource('profesor', 'ProfesorController')->only(['index', 'show','update']);

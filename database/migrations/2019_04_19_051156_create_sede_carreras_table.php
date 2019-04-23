@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreatePlanEstudiosTable extends Migration
+class CreateSedeCarrerasTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,12 +13,8 @@ class CreatePlanEstudiosTable extends Migration
      */
     public function up()
     {
-        Schema::create('plan_estudios', function (Blueprint $table) {
+        Schema::create('sede_carreras', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->string('descripcion');
-            $table->integer('cod_carrera')->unsigned();
-            $table->foreign('cod_carrera')->references('id')->on('carreras')->onDelete('set null');
-            $table->date('fecha');
             $table->timestamps();
         });
     }
@@ -30,6 +26,6 @@ class CreatePlanEstudiosTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('plan_estudios');
+        Schema::dropIfExists('sede_carreras');
     }
 }
