@@ -42,8 +42,24 @@
                     <div class="col s12 l10 pull-l2">
                         <h5 class="header-breadcrumb mt-0 mb-0 text-uppercase show-on-medium-and-up hide-on-med-and-down">@yield('title')</h5>
                         <img src="{{ asset('public/img/logo-lugu-svg.svg') }}" alt="logo" class="header-img hide-on-med-and-up" />
-                        <a href="#!" class="breadcrumb">First</a>
-                        <a href="/" class="breadcrumb">@yield('title')</a> {{-- <a href="#!" class="breadcrumb">Third</a>                        --}}
+                        
+                        <a href="{{ route('home') }}" class="breadcrumb">Inicio</a>
+                       
+                        @if (Request::is('admin') || Request::is('admin/*') )
+                        <a href="{{ route('admin.home') }}" class="breadcrumb">Administrador</a>
+                        @endif
+                        
+                        @if (Request::is('estudiante') || Request::is('estudiante/*') )
+                        <a href="{{ route('estudiante.home') }}" class="breadcrumb">Estudiante</a>
+                        @endif
+
+                        @if (Request::is('profesor') || Request::is('profesor/*') )
+                        <a href="{{ route('profesor.home') }}" class="breadcrumb">Profesor</a>
+                        @endif
+
+                        @hasSection('bread')
+                        <a href="" class="breadcrumb">@yield('bread')</a>
+                        @endif
                     </div>
                 </div>
             </div>
@@ -107,14 +123,19 @@
             <div class="divider"></div>
         </li>
         <ul class="collapsible">
+
             <li>
-                <div class="collapsible-header"><i class="material-icons">home</i>Inicio</div>
-                <div class="collapsible-body"><span>Lorem ipsum dolor sit amet.</span></div>
+                 <a href="{{ route('home') }}">
+                    <div class="collapsible-header"><i class="material-icons">home</i>Inicio</div>
+                 </a>
             </li>
+
+            <!-- Menu Admin -->
+            @if (Request::is('admin') || Request::is('admin/*') )
             <li>
                 <div class="collapsible-header">
-                    <i class="material-icons">account_box</i>
-                        Usuarios
+                    <i class="material-icons">supervisor_account</i>
+                    Usuarios
                     <i class="material-icons ml-auto arrow-icon">keyboard_arrow_down</i>
                 </div>
                 <div class="collapsible-body">
@@ -125,10 +146,79 @@
                     </ul>
                 </div>
             </li>
+            <li>
+                <div class="collapsible-header">
+                    <i class="material-icons">account_box</i>
+                    Programas
+                    <i class="material-icons ml-auto arrow-icon">keyboard_arrow_down</i>
+                </div>
+                <div class="collapsible-body">
+                    <ul>
+                        <li>
+                            <a href="{{ route('programa.index') }}">Listar</a>
+                        </li>
+                        <li>
+                            <a href="{{ route('programa.create') }}">Agregar</a>
+                        </li>
+                    </ul>
+                </div>
+            </li>
+            @endif
+            <!-- fin Menu Admin -->
+
+            <!-- Menu Estudiante -->
+            @if (Request::is('estudiante') || Request::is('estudiante/*') )
+
+            <!-- Esto es un ejemplo  -->
+            <li>
+                <div class="collapsible-header">
+                    <i class="material-icons">account_box</i>
+                    Example
+                    <i class="material-icons ml-auto arrow-icon">keyboard_arrow_down</i>
+                </div>
+                <div class="collapsible-body">
+                    <ul>
+                        <li>
+                            <a href="{{ route('programa.index') }}">example</a>
+                        </li>
+                    </ul>
+                </div>
+            </li>
+            <!-- Fin ejemplo  -->
+            @endif
+            <!-- fin Menu Estudiante -->
+
+            <!-- Menu Profesor -->
+
+            @if (Request::is('profesor') || Request::is('profesor/*') )
+
+            <!-- Esto es un ejemplo  -->
+            <li>
+                <div class="collapsible-header">
+                    <i class="material-icons">account_box</i>
+                    Example
+                    <i class="material-icons ml-auto arrow-icon">keyboard_arrow_down</i>
+                </div>
+                <div class="collapsible-body">
+                    <ul>
+                        <li>
+                            <a href="{{ route('programa.index') }}">example</a>
+                        </li>
+                    </ul>
+                </div>
+            </li>
+            <!-- Fin ejemplo  -->
+            @endif
+            <!-- fin Menu Profesor -->
+
         </ul>
+
         <li class="divider"></li>
         <li>
-            <a href="{{ route('logout') }}"><i class="material-icons">add</i>Cerrar sesión</a>
+            <a href="{{ route('logout') }}"><i class="material-icons">account_box</i>Perfil</a>
+        </li>       
+        <li>
+            <a href="{{ route('logout') }}"><i class="material-icons">exit_to_app</i>Cerrar sesión</a>
         </li>
     </ul>
 </header>

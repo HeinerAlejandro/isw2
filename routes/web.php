@@ -42,8 +42,9 @@ Route::get('/home', 'HomeController@index')->name('home');
 // 	return "Pagina de Error";
 // });
 
-
+// Rutas Admin
 Route::group(['prefix' => 'admin', 'namespace' => 'Admin', 'middleware' => ['auth']], function () {
+    Route::get('/', 'HomeController@index')->name('admin.home');
     Route::resource('usuario', 'UsuarioController');
     Route::resource('estudiante', 'EstudianteController')->only(['index', 'show','update']);
     Route::resource('profesor', 'ProfesorController')->only(['index', 'show','update']);
@@ -53,4 +54,16 @@ Route::group(['prefix' => 'admin', 'namespace' => 'Admin', 'middleware' => ['aut
     Route::resource('programa', 'ProgramaController');
     Route::resource('plan', 'PlanEstudioController');
     Route::resource('lapso', 'LapsoAcademicoController');
+});
+
+// Rutas Estudiante
+Route::group(['prefix' => 'estudiante', 'namespace' => 'Estudiante', 'middleware' => ['auth']], function () {
+    Route::get('/', 'HomeController@index')->name('estudiante.home');
+    // Route::resource('usuario', 'UsuarioController');
+});
+
+// Rutas Profesor
+Route::group(['prefix' => 'profesor', 'namespace' => 'Profesor', 'middleware' => ['auth']], function () {
+    Route::get('/', 'HomeController@index')->name('profesor.home');
+    // Route::resource('usuario', 'UsuarioController');
 });

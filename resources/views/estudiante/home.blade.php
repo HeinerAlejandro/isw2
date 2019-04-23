@@ -1,5 +1,5 @@
 @extends('layouts.main-layout')
-@section('title') Inicio
+@section('title') Inicio Estudiante
 @endsection
 
 @section('content')
