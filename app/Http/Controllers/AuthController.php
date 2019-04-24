@@ -10,7 +10,8 @@ class AuthController extends Controller
     public function __construct()
     {
         $this->middleware('jwt', ['except' => ['login']]);
-        }
+
+    }
     /**
      * Get a JWT via given credentials.
      *
@@ -19,6 +20,7 @@ class AuthController extends Controller
     public function login()
     {
         $credentials = request(['usuario', 'password']);
+        
         if (!$token = auth()->attempt($credentials)) {
             return response()->json(['error' => 'Unauthorized'], 401);
         }
