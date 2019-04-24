@@ -125,7 +125,9 @@
         <ul class="collapsible">
 
             <li>
-                <a href="{{ route('home') }}"><i class="material-icons">home</i>Inicio</a>
+                 <a href="{{ route('home') }}">
+                    <div class="collapsible-header"><i class="material-icons">home</i>Inicio</div>
+                 </a>
             </li>
 
             <!-- Menu Admin -->
