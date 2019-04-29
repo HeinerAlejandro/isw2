@@ -63,7 +63,7 @@ Route::group(['prefix' => 'estudiante', 'namespace' => 'Estudiante', 'middleware
 });
 
 // Rutas Profesor
-Route::group(['prefix' => 'profesor', 'namespace' => 'Profesor', 'middleware' => ['auth']], function () {
+/*Route::group(['prefix' => 'profesor', 'namespace' => 'Profesor', 'middleware' => ['auth']], function () {
     Route::get('/', 'HomeController@index')->name('profesor.home');
     // Route::resource('usuario', 'UsuarioController');
-});
+});*/

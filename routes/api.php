@@ -23,3 +23,5 @@ Route::group(['prefix' => 'auth',], function () {
     Route::post('refresh', 'AuthController@refresh');
     Route::post('me', 'AuthController@me');
 });
+
+Route::apiResource('expedient', 'ExpedientController');

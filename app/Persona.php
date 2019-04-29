@@ -8,8 +8,8 @@ class Persona extends Model
 {
     protected $fillable = [
         'cod_usuario', 
-        'nombres', 
-        'apellidos', 
+        'nombres',
+        'apellidos',
         'cedula',
         'telefono',
         'fecha_nacimiento',
