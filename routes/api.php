@@ -25,3 +25,4 @@ Route::group(['prefix' => 'auth',], function () {
 });
 
 Route::apiResource('expedient', 'ExpedientController');
+Route::apiResource('inscripcion', 'InscripcionController');
