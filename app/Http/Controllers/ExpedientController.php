@@ -21,7 +21,9 @@ class ExpedientController extends Controller
         
             $expediente = Expediente::where('cod_persona', $estudiante->cod_persona);
 
-            return response($expediente, 200);
+            return response()->json([
+                'expediente' => expediente,
+            ]);
         }
         
         $message = "No esta autenticado";

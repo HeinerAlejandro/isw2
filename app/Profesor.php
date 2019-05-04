@@ -26,7 +26,7 @@ class Profesor extends Model
 
     public function area()
     {
-       return $this->belongsTo(Area::class,'cod_area');
+      return $this->belongsTo(Area::class,'cod_area');
     }
 
     public function JefeDepartamento()
