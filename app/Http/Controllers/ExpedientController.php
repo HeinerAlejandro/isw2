@@ -22,7 +22,7 @@ class ExpedientController extends Controller
             $expediente = Expediente::where('cod_persona', $estudiante->cod_persona);
 
             return response()->json([
-                'expediente' => expediente,
+                'expediente' => $expediente,
             ]);
         }
         
